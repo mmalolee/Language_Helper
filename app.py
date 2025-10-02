@@ -24,14 +24,14 @@ lf_host = os.getenv('LANGFUSE_HOST')
 # SECRETS #
 ###########
 
-if 'LANGFUSE_SECRET_KEY' in st.secrets:
-    lf_secret_key = st.secrets('LANGFUSE_SECRET_KEY')
+# if 'LANGFUSE_SECRET_KEY' in st.secrets:
+#     lf_secret_key = st.secrets('LANGFUSE_SECRET_KEY')
 
-if 'LANGFUSE_PUBLIC_KEY' in st.secrets:
-    lf_public_key = st.secrets('LANGFUSE_PUBLIC_KEY')
+# if 'LANGFUSE_PUBLIC_KEY' in st.secrets:
+#     lf_public_key = st.secrets('LANGFUSE_PUBLIC_KEY')
 
-if 'LANGFUSE_HOST' in st.secrets:
-    lf_host = st.secrets('LANGFUSE_HOST')
+# if 'LANGFUSE_HOST' in st.secrets:
+#     lf_host = st.secrets('LANGFUSE_HOST')
 
 
 #############
