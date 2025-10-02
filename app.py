@@ -16,19 +16,22 @@ import os
 
 load_dotenv()
 
+lf_secret_key = os.getenv('LANGFUSE_SECRET_KEY')
+lf_public_key = os.getenv('LANGFUSE_PUBLIC_KEY')
+lf_host = os.getenv('LANGFUSE_HOST')
 
 ###########
 # SECRETS #
 ###########
 
 if 'LANGFUSE_SECRET_KEY' in st.secrets:
-    os.getenv('LANGFUSE_SECRET_KEY') = st.secrets('LANGFUSE_SECRET_KEY')
+    lf_secret_key = st.secrets('LANGFUSE_SECRET_KEY')
 
 if 'LANGFUSE_PUBLIC_KEY' in st.secrets:
-    os.getenv('LANGFUSE_PUBLIC_KEY') = st.secrets('LANGFUSE_PUBLIC_KEY')
+    lf_public_key = st.secrets('LANGFUSE_PUBLIC_KEY')
 
 if 'LANGFUSE_HOST' in st.secrets:
-    os.getenv('LANGFUSE_HOST') = st.secrets('LANGFUSE_HOST')
+    lf_host = st.secrets('LANGFUSE_HOST')
 
 
 #############
