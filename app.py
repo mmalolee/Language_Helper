@@ -16,6 +16,7 @@ import os
 
 load_dotenv()
 
+
 lf_secret_key = os.getenv('LANGFUSE_SECRET_KEY')
 lf_public_key = os.getenv('LANGFUSE_PUBLIC_KEY')
 lf_host = os.getenv('LANGFUSE_HOST')
@@ -645,14 +646,12 @@ with text_tr:
                     st.text_area('Translation', height=150, value='')
 
                 st.warning(f"Input and Detected Language Don't Match. Switch Language Input to {st.session_state['TT_detected_language']}")
-                st.stop()
 
         else:
             with c1:
                 st.text_area('Translation', height=150, value='')
 
             st.warning('Enter the Text')
-            st.stop()
 
     else:
         with c1:
@@ -812,7 +811,6 @@ with speech_cor:
 
         if check_audio_correction_button:
             st.warning(f"Enter the Content")
-            st.stop()
 
     if input_speech:
         with c1:
@@ -832,7 +830,6 @@ with speech_cor:
 
                 if is_grammatically_correct:
                     st.success('Sentence is Correct!')
-                    st.stop()
                 
                 else:
                     sentence, difficult_words, grammars = get_corr_words_and_grammar(st.session_state['CS_input_speech_as_text'], st.session_state['CS_input_language'])
@@ -875,8 +872,9 @@ with speech_cor:
 
             else:
                 st.warning(f"Input and Detected Language Don't Match. Switch Language Input to {language_detected}")
-                st.stop()
 
+
+# Qdrant #
     if save_button:
         if st.session_state['CS_output_as_text']:
             add_correction_to_db(
